@@ -1,0 +1,17 @@
+def isUniqueChar(s):
+    seenBefore = [False] * 256 #creates a list of every characters' ord value being false
+
+    for ch in s:
+        nextCharacter = ord(ch)
+        if seenBefore[nextCharacter]: #checks if we have seen the value before. if it has not seen it will set it to true and move on
+            return False
+        seenBefore[nextCharacter] = True
+    return True
+
+sample1 = 'abcdefg'
+sample2 = 'aaaaabce'
+sample3 = 'abcdeff'
+
+print(isUniqueChar(sample1))
+print(isUniqueChar(sample2))
+print(isUniqueChar(sample3))
